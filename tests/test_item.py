@@ -24,3 +24,13 @@ def test_name():
 def test_string_to_number():
     assert Item.string_to_number('4.0') == 4
     assert Item.string_to_number('4.4') == 4
+
+
+def test_str():
+    item1 = Item("Смартфон", 10000, 20)
+    assert str(item1) == 'Смартфон'
+
+
+def test_repr():
+    item1 = Item("Смартфон", 10000, 20)
+    assert repr(item1) == "Item('Смартфон', 10000, 20)"
