@@ -24,6 +24,12 @@ class Item:
     def __repr__(self):
         return f"{self.__class__.__name__}('{self.name}', {self.price}, {self.quantity})"
 
+    def __add__(self, other):
+        """Складывает экземпляры класса Phone и Item (сложение по количеству товара в магазине)"""
+        if not isinstance(other, Item):
+            raise ValueError('Количество физических SIM-карт должно быть целым числом больше нуля.')
+        return self.quantity + other.quantity
+
     def calculate_total_price(self) -> float:
         """
         Рассчитывает общую стоимость конкретного товара в магазине.
