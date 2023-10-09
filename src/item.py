@@ -27,7 +27,7 @@ class Item:
     def __add__(self, other):
         """Складывает экземпляры класса Phone и Item (сложение по количеству товара в магазине)"""
         if not isinstance(other, Item):
-            raise ValueError('Количество физических SIM-карт должно быть целым числом больше нуля.')
+            raise ValueError('Складывать можно только объекты Item и дочерние от них.')
         return self.quantity + other.quantity
 
     def calculate_total_price(self) -> float:
