@@ -53,4 +53,3 @@ def test_instantiate_from_csv():
 def test_instantiate_csv_error():
     with pytest.raises(InstantiateCSVError):
         Item.instantiate_from_csv('filename')
-        assert "Файл поврежден"
