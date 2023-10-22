@@ -1,5 +1,7 @@
 from src.item import Item
 from src.phone import Phone
+from src.exeption_error import InstantiateCSVError
+import pytest
 
 
 def test_calculate_total_price():
@@ -41,3 +43,14 @@ def test_add():
     item1 = Item("Смартфон", 10000, 20)
     assert item1 + phone1 == 25
     assert phone1 + phone1 == 10
+
+
+def test_instantiate_from_csv():
+    with pytest.raises(FileNotFoundError):
+        Item.instantiate_from_csv('filename')
+
+
+def test_instantiate_csv_error():
+    with pytest.raises(InstantiateCSVError):
+        Item.instantiate_from_csv('filename')
+        assert "Файл поврежден"
